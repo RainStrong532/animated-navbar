@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: sans-serif;
+  font-size: 18px;
+  overflow: hidden;
+}
+
+nav {
+  position: absolute;
+  top: 30px;
+  right: 100px;
+}
+
+nav ul {
+  width: 0px;
+  overflow: hidden;
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 4px;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: -7px 9px 17px 0px #00000017;
+          box-shadow: -7px 9px 17px 0px #00000017;
+  padding: 20px;
+}
+
+nav ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  padding: 10px 20px;
+}
+
+nav ul li:hover a {
+  color: crimson;
+}
+
+nav .icon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: -80px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: white;
+  background-image: url(/assets/images/menu.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 17px 0px #00000017;
+          box-shadow: 0px 0px 17px 0px #00000017;
+  -webkit-transition: .5s ease transform;
+  transition: .5s ease transform;
+}
+
+.icon.close {
+  -webkit-transform: translateY(-50%) rotate(360deg);
+          transform: translateY(-50%) rotate(360deg);
+  background-image: url(/assets/images/close.svg);
+}
+
+nav.show ul {
+  width: 450px;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  nav.show ul {
+    width: 260px;
+  }
+  nav {
+    top: 10px;
+    right: 60px;
+  }
+  nav .icon {
+    width: 45px;
+    height: 45px;
+    right: -50px;
+  }
+  nav ul {
+    padding: 15px;
+  }
+  nav ul li a {
+    padding: 5px 10px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 18px;
+    overflow: hidden;
+}
+nav {
+    position: absolute;
+    top: 30px;
+    right: 100px;
+    ul {
+        width: 0px;
+        overflow: hidden;
+        transform: translateX(50px);
+        opacity: 0;
+        pointer-events: none;
+        transition: .5s ease;
+        background-color: white;
+        border-radius: 4px;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -7px 9px 17px 0px #00000017;
+        padding: 20px;
+        li {
+            a {
+                display: inline-block;
+                text-decoration: none;
+                color: black;
+                padding: 10px 20px;
+            }
+            &:hover {
+                a {
+                    color: crimson;
+                }
+            }
+        }
+    }
+    .icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -80px;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: rgba($color: #FFFFFF, $alpha: 1.0);
+        background-image: url(/assets/images/menu.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        cursor: pointer;
+        box-shadow: 0px 0px 17px 0px #00000017;
+        transition: .5s ease transform;
+    }
+}
+.icon.close{
+    transform: translateY(-50%) rotate(360deg);
+    background-image: url(/assets/images/close.svg);
+}
+nav.show{
+    ul{
+        width: 450px;
+        transform: translate(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    body{
+        font-size: 14px;
+    }
+    nav.show{
+        ul{
+            width: 260px;
+        }
+    }
+    nav{
+        top: 10px;
+        right: 60px;
+        .icon{
+            width: 45px;
+            height: 45px;
+            right: -50px;
+        }
+        ul{
+            padding: 15px;
+            li{
+                a{
+                    padding: 5px 10px;
+                }
+            }
+        }
+    }
+}
